@@ -1,15 +1,15 @@
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
-#ifndef MAIN_H
-#define MAIN_H
+#include <limits.h>
 /**
  * struct sp_func -  struct holds specifier and functions
- * @specfr: specifier
+ * @sym: char specifier
  * @f: pointer to function
  * sp_func - typdef struct
- * 
 */
 typedef struct sp_func
 {

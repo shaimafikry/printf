@@ -17,7 +17,7 @@ int i, j, r_val, count;
 		if (format[i] == '%') /*Checks for format specifiers*/
 		{
 			/*Iterates through struct to find the right func*/
-			for (j = 0; sp_list[j].sym!= NULL; j++)
+			for (j = 0; sp_list[j].sym != NULL; j++)
 			{
 				if (format[i + 1] == sp_list[j].sym[0])
 				{
