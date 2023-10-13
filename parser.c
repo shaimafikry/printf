@@ -28,7 +28,12 @@ int i, j, r_val, count;
 					break;
 				}
 			}
-			if (sp_list[j].sym == NULL && format[i + 1] != ' ')
+			if (format[i + 1] == '%')
+				{
+				p_char(format[i + 1]);
+				count ++;
+				}
+			else if (sp_list[j].sym == NULL && format[i + 1] != ' ')
 			{
 				if (format[i + 1] != '\0')
 				{
