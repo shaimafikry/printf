@@ -18,6 +18,7 @@ typedef struct sp_func
 } sp_func;
 
 int p_char(char c);
+int print_specf(void);
 int print_char(va_list);
 int print_string(va_list);
 int _printf(char const *format, ...);

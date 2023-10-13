@@ -10,6 +10,7 @@ int _printf(char const *format, ...)
 	sp_func sp_list[] = {
 		{"s", print_string},
 		{"c", print_char},
+		{"%", print_specf}
 		};
 	va_list lst;
 

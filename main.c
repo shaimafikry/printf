@@ -14,7 +14,9 @@ int main(void)
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
      _printf("Unknown:[%%]\n");
+       printf("Unknown:[%%]\n");
      _printf("Unknown:[%%%%]\n");
-    printf("Unknown:[%%]\n");
+    printf("Unknown:[%%%%]\n");
+  
     return (0);
 }
