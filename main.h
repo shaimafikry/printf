@@ -13,15 +13,14 @@
 */
 typedef struct sp_func
 {
-	char specfr;
+	char *sym;
 	int (*f)();
 } sp_func;
 
 int p_char(char c);
-int p_str(char *str);
-int p_oct (int num);
-int p_hex (int num);
-int p_decm (int num);
-int _printf(char const *str, ...);
+int print_char(va_list);
+int print_string(va_list);
+int _printf(char const *format, ...);
+int parser(const char *format, sp_func sp_list[], va_list lst);
 
 #endif
