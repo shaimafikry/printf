@@ -13,7 +13,8 @@ int _printf(char const *format, ...)
 		{"d", print_integer},
 		{"i", print_integer},
 		{"c", print_char},
-		{"%", print_specf}
+		{"%", print_specf},
+		{"u", unsigned_integer}
 		};
 	va_list lst;
 
