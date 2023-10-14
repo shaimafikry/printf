@@ -26,5 +26,5 @@ int parser(const char *format, sp_func sp_list[], va_list lst);
 int print_integer(va_list);
 int print_number(va_list);
 int print_unsgined_number(unsigned int);
-
+int unsigned_integer(va_list);
 #endif
