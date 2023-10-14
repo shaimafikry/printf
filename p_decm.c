@@ -1,27 +1,66 @@
 #include "main.h"
-/**
- * p_decm - print integrs
- * @num: integer
- * Return: count of printed num;
-*/
-int p_decm (int num)
-{
-	int count, n;
 
-	count = 0;
-	if (num < 0)
-		p_char('-');
-	if (num == 0)
+/**
+ * print_number - prints a number send to this function
+ * @args: List of arguments
+ * Return: The number of arguments printed
+ */
+int print_number(va_list lst)
+{
+	int n;
+	int div;
+	int len;
+	unsigned int num;
+
+	n  = va_arg(lst, int);
+	div = 1;
+	len = 0;
+
+	if (n < 0)
 	{
-		p_char ('0');
-		return (1);
+		len += p_char('-');
+		num = n * -1;
 	}
-	while (num / 10 != 0)
+	else
+		num = n;
+
+	for (; num / div > 9; )
+		div *= 10;
+
+	for (; div != 0; )
 	{
-		n = num % 10;
-		p_char(n + '0');
-		count++;
-		num = num / 10;
+		len += p_char('0' + num / div);
+		num %= div;
+		div /= 10;
 	}
-	return (count);
+
+	return (len);
+}
+/**
+ * print_unsgined_number - Prints an unsigned number
+ * @n: unsigned integer to be printed
+ * Return: The amount of numbers printed
+ */
+int print_unsgined_number(unsigned int n)
+{
+	int div;
+	int len;
+	unsigned int num;
+
+	div = 1;
+	len = 0;
+
+	num = n;
+
+	for (; num / div > 9; )
+		div *= 10;
+
+	for (; div != 0; )
+	{
+		len += p_char('0' + num / div);
+		num %= div;
+		div /= 10;
+	}
+
+	return (len);
 }
