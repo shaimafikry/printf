@@ -27,3 +27,12 @@ int print_string(va_list list)
 		p_char(str[i]);
 	return (i);
 }
+/**
+ * print_specf - Prints a string
+ * Return: Will return the amount of characters printed.
+ */
+int print_specf(void)
+{
+	p_char('%');
+	return (1);
+}
