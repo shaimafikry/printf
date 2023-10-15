@@ -27,4 +27,13 @@ int print_integer(va_list);
 int print_number(va_list);
 int print_unsgined_number(unsigned int);
 int unsigned_integer(va_list);
+void print_hexa(unsigned int num);
+int p_hexa(va_list);
+void print_HEXA(unsigned int num);
+int p_HEXA(va_list lst);
+void print_octal(unsigned int num);
+int p_oct(va_list);
+void print_binary(int num);
+int p_bin(va_list);
+
 #endif

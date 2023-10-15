@@ -14,7 +14,11 @@ int _printf(char const *format, ...)
 		{"i", print_integer},
 		{"c", print_char},
 		{"%", print_specf},
-		{"u", unsigned_integer}
+		{"u", unsigned_integer},
+		{"x", p_hexa},
+		{"X", p_HEXA},
+		{"o", p_oct},
+		{"b", p_bin}
 		};
 	va_list lst;
 
