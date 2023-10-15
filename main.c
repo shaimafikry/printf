@@ -33,11 +33,10 @@ int main(void)
 		printf("Len:[%d]\n", len2);
 		/*_printf("Unknown:[%r]\n");
 		printf("Unknown:[%r]\n");*/
-		
 		_printf("Unsigned octal:[%o]\n", ui);
-		printf("\nUnsigned octal:[%o]\n", ui);
+		printf("Unsigned octal:[%o]\n", ui);
 		_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-		printf("\nUnsigned hexadecimal:[%x, %X]\n", ui, ui);
-		_printf("\nbinary : %b\n", binary);
+		printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+		_printf("binary : %b\n", binary);
 		return (0);
 }

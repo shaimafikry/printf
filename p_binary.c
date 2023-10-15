@@ -6,14 +6,12 @@
 */
 void print_binary(int num)
 {
-    if ( num != 0)
-    {
-	print_binary(num / 2);
-	
-	if (num % 2 )
-	    putchar('1');
-	else 
-	    putchar('0');
-	    
-    }
+	if (num != 0)
+	{
+		print_binary(num / 2);
+	if (num % 2)
+		p_char('1');
+	else
+		p_char('0');
+	}
 }

@@ -9,7 +9,7 @@ int _printf(char const *format, ...)
 	int count;
 	sp_func sp_list[] = {
 		{"s", print_string},
-		{"c",print_char},
+		{"c", print_char},
 		{"d", print_integer},
 		{"i", print_integer},
 		{"c", print_char},

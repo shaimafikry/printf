@@ -2,7 +2,7 @@
 
 /**
  * print_number - prints a number send to this function
- * @args: List of arguments
+ * @lst: List of arguments
  * Return: The number of arguments printed
  */
 int print_number(va_list lst)
