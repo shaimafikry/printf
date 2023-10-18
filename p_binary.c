@@ -4,24 +4,32 @@
  * @num: integr
  * Return: num printed
 */
-int print_binary(unsigned int num)
+int p_bin(va_list list)
 {
-	int count;
+	unsigned int num;
+	int i, len;
+	char *str;
+	char *rev_str;
 
-	count = 0;
-	if (num != 0)
+	num = va_arg(list, unsigned int);
+	if (num == 0)
+		return (_write_char('0'));
+	if (num < 1)
+		return (-1);
+	len = base_len(num, 2);
+	str = malloc(sizeof(char) * len + 1);
+	if (str == NULL)
+		return (-1);
+
+	for (i = 0; num > 0; i++)
 	{
-		count += print_binary(num / 2);
-	if (num % 2)
-	{
-		p_char('1');
-		count++;
+		if (num % 2 == 0)
+			str[i] = '0';
+		else
+			str[i] = '1';
+		num = num / 2;
 	}
-	else
-	{
-		p_char('0');
-		count++;
-	}
-	}
-	return (count);
+	str[i] = '\0';
+	free(str);
+	return (len);
 }

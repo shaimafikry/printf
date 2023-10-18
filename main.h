@@ -37,6 +37,6 @@ int p_HEXA(va_list);
 int print_octal(unsigned int num);
 int p_oct(va_list);
 int print_binary(unsigned int num);
-int p_bin(va_list);
+int p_bin(va_list list)
 
 #endif
