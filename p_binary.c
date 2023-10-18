@@ -11,7 +11,7 @@ int print_binary(unsigned int num)
 	count = 0;
 	if (num != 0)
 	{
-		print_binary(num / 2);
+		count += print_binary(num / 2);
 	if (num % 2)
 	{
 		p_char('1');

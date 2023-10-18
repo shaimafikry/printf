@@ -9,6 +9,11 @@ int p_oct(va_list lst)
 	unsigned int i, num;
 
 	num = va_arg(lst, unsigned int);
+	if (num == 0)
+	{
+		p_char('0');
+		return (1);
+	}
 	i = print_octal(num);
 	return (i);
 }
