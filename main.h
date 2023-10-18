@@ -23,7 +23,6 @@ int print_char(va_list);
 int print_string(va_list);
 int p_strasc(va_list);
 int p_rev_string(va_list);
-int rev_string(char *str);
 int _printf(char const *format, ...);
 int parser(const char *format, sp_func sp_list[], va_list lst);
 int print_integer(va_list);
@@ -36,8 +35,12 @@ int print_HEXA(unsigned int num);
 int p_HEXA(va_list);
 int print_octal(unsigned int num);
 int p_oct(va_list);
-int print_binary(unsigned int num);
 int p_bin(va_list list);
 unsigned int base_len(unsigned int num, int base);
+char *rev_string(char *);
+char *_memcpy(char *dest, char *src, unsigned int n);
+int print_reversed(va_list arg);
+int rot13(va_list);
+void write_base(char *str);
 
 #endif

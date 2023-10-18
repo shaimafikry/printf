@@ -20,7 +20,8 @@ int _printf(char const *format, ...)
 		{"o", p_oct},
 		{"b", p_bin},
 		{"S", p_strasc},
-		{"r", p_rev_string}
+	    {"r", print_reversed},
+		{"R", rot13}
 		};
 	va_list lst;
 

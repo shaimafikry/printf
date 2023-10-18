@@ -18,26 +18,41 @@ int p_oct(va_list lst)
 	return (i);
 }
 /**
- * p_bin -  turns dcimal to binary and print it
- * @lst: vardic list
- * Return: num of printed char
+ * print_binary - Converts a number from base 10 to binary
+ * @list: List of arguments passed to this function
+ * Return: The length of the number printed
  */
-int p_bin(va_list lst)
+int p_bin(va_list list)
 {
-	int i, bin;
+	unsigned int num;
+	int i, len;
+	char *str;
+	char *rev_str;
 
-	bin = va_arg(lst, unsigned int);
-	if (bin == 0)
+	num = va_arg(list, unsigned int);
+	if (num == 0)
+		return (p_char('0'));
+	if (num < 1)
+		return (-1);
+	len = base_len(num, 2);
+	str = malloc(sizeof(char) * len + 1);
+	if (str == NULL)
+		return (-1);
+
+	for (i = 0; num > 0; i++)
 	{
-		p_char('0');
-		return (1);
+		if (num % 2 == 0)
+			str[i] = '0';
+		else
+			str[i] = '1';
+		num = num / 2;
 	}
-	if (bin == 1)
-	{
-		p_char('1');
-		return (1);
-	}
-	i = 0;
-	i = print_binary(bin);
-return (i);
+	str[i] = '\0';
+	rev_str = rev_string(str);
+	if (rev_str == NULL)
+		return (-1);
+	write_base(rev_str);
+	free(str);
+	free(rev_str);
+	return (len);
 }

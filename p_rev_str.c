@@ -1,34 +1,57 @@
-#include "main.h"
-/**
- * rev_string -  reverse and print string
- * @str: char *
- * Return: num of printed chars
-*/
-int rev_string(char *str)
-{
-	int count;
 
-	count = 0;
-	if (str[0] != '\0')
-	{
-		count += rev_string(str + 1);
-		p_char(str[0]);
-		count++;
-	}
-	return (count);
-}
+#include "main.h"
+
 /**
- * p_rev_string - Prints a string in reverse
- * @list: list of arguments
- * Return: Will return the amount of characters printed.
+ * print_reversed - Calls a function to reverse and print a string
+ * @arg: Argument passed to the function
+ * Return: The amount of characters printed
  */
-int p_rev_string(va_list list)
+int print_reversed(va_list arg)
+{
+	int len;
+	char *str;
+	char *ptr;
+
+	str = va_arg(arg, char *);
+	if (str == NULL)
+		return (-1);
+	ptr = rev_string(str);
+	if (ptr == NULL)
+		return (-1);
+	for (len = 0; ptr[len] != '\0'; len++)
+		p_char(ptr[len]);
+	free(ptr);
+	return (len);
+}
+
+/**
+ * rot13 - Converts string to rot13
+ * @list: string to convert
+ * Return: converted string
+ */
+int rot13(va_list list)
 {
 	int i;
+	int x;
 	char *str;
+	char s[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char u[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	i = 0;
 	str = va_arg(list, char *);
-	i = rev_string(str);
+	if (str == NULL)
+		return (-1);
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		for (x = 0; x <= 52; x++)
+		{
+			if (str[i] == s[x])
+			{
+				p_char(u[x]);
+				break;
+			}
+		}
+		if (x == 53)
+			p_char(str[i]);
+	}
 	return (i);
 }
