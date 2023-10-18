@@ -4,14 +4,24 @@
  * @num: integr
  * Return: num printed
 */
-void print_binary(int num)
+int print_binary(unsigned int num)
 {
+	int count;
+
+	count = 0;
 	if (num != 0)
 	{
 		print_binary(num / 2);
 	if (num % 2)
+	{
 		p_char('1');
-	else
-		p_char('0');
+		count++;
 	}
+	else
+	{
+		p_char('0');
+		count++;
+	}
+	}
+	return (count);
 }

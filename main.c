@@ -31,12 +31,13 @@ int main(void)
 		len2 = printf("Percent:[%%]\n");
 		_printf("Len:[%d]\n", len);
 		printf("Len:[%d]\n", len2);
-		/*_printf("Unknown:[%r]\n");
-		printf("Unknown:[%r]\n");*/
+		_printf("Unknown:[%r]\n", "this is a tet");
+		/*printf("Unknown:[%r]\n");*/
 		_printf("Unsigned octal:[%o]\n", ui);
 		printf("Unsigned octal:[%o]\n", ui);
 		_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 		printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 		_printf("binary : %b\n", binary);
+
 		return (0);
 }

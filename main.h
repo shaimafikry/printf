@@ -21,19 +21,22 @@ int p_char(char c);
 int print_specf(void);
 int print_char(va_list);
 int print_string(va_list);
+int p_strasc(va_list);
+int p_rev_string(va_list);
+int rev_string(char *str);
 int _printf(char const *format, ...);
 int parser(const char *format, sp_func sp_list[], va_list lst);
 int print_integer(va_list);
 int print_number(va_list);
 int print_unsgined_number(unsigned int);
 int unsigned_integer(va_list);
-void print_hexa(unsigned int num);
+int print_hexa(unsigned int num);
 int p_hexa(va_list);
-void print_HEXA(unsigned int num);
-int p_HEXA(va_list lst);
-void print_octal(unsigned int num);
+int print_HEXA(unsigned int num);
+int p_HEXA(va_list);
+int print_octal(unsigned int num);
 int p_oct(va_list);
-void print_binary(int num);
+int print_binary(unsigned int num);
 int p_bin(va_list);
 
 #endif

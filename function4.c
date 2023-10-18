@@ -6,17 +6,10 @@
  */
 int p_oct(va_list lst)
 {
-	unsigned int i, oct, num;
+	unsigned int i, num;
 
-	oct = va_arg(lst, unsigned int);
-	num = oct;
-	i = 0;
-	while (oct != 0)
-	{
-		i++;
-		oct = oct / 8;
-	}
-	print_octal(num);
+	num = va_arg(lst, unsigned int);
+	i = print_octal(num);
 	return (i);
 }
 /**
@@ -28,13 +21,18 @@ int p_bin(va_list lst)
 {
 	int i, bin;
 
-	bin = va_arg(lst, int);
-	print_binary(bin);
-	i = 0;
-	while (bin != 0)
+	bin = va_arg(lst, unsigned int);
+	if (bin == 0)
 	{
-		i++;
-		bin = bin / 2;
-		}
+		p_char('0');
+		return (1);
+	}
+	if (bin == 1)
+	{
+		p_char('1');
+		return (1);
+	}
+	i = 0;
+	i = print_binary(bin);
 return (i);
 }

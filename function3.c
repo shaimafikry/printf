@@ -4,20 +4,17 @@
  * @lst: variadic list
  * Return: num of printed char
 */
+
 int p_hexa(va_list lst)
 {
 	unsigned int i, hex;
 
-	hex = va_arg(lst, unsigned int);
-	print_hexa(hex);
 	i = 0;
-	while (hex != 0)
-	{
-		i++;
-		hex = hex / 16;
-	}
+	hex = va_arg(lst, unsigned int);
+	i = print_hexa(hex);
 	return (i);
 }
+
 /**
  * p_HEXA -  turns edcimal to hexadecimal and print it
  * @lst: variadic list
@@ -25,15 +22,10 @@ int p_hexa(va_list lst)
 */
 int p_HEXA(va_list lst)
 {
-	unsigned int i, hex;
+	unsigned int i, HEX;
 
-	hex = va_arg(lst, unsigned int);
-	print_HEXA(hex);
 	i = 0;
-	while (hex != 0)
-	{
-		i++;
-		hex = hex / 16;
-	}
+	HEX = va_arg(lst, unsigned int);
+	i = print_HEXA(HEX);
 	return (i);
 }

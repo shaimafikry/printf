@@ -18,7 +18,9 @@ int _printf(char const *format, ...)
 		{"x", p_hexa},
 		{"X", p_HEXA},
 		{"o", p_oct},
-		{"b", p_bin}
+		{"b", p_bin},
+		{"S", p_strasc},
+		{"r", p_rev_string}
 		};
 	va_list lst;
 
